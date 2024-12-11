@@ -1,0 +1,30 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: mps-data-producer
+  datasource:
+    url: jdbc:postgresql://localhost:5435/mps-transaction
+    username: user
+    password: user1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
+  output:
+    ansi:
+      enabled: Always
+  kafka:
+    bootstrap-servers: "localhost:9092"
+
+jackson:
+  serialization.write_dates_as_timestamps: false
+  deserialization.fail_on_unknown_properties: false
+  default-property-inclusion: non_empty
+  property-naming-strategy: SNAKE_CASE

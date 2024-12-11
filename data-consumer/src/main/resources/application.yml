@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mps-data-consumer
+  datasource:
+    url: jdbc:postgresql://localhost:5435/mps-transaction
+    username: user
+    password: user1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
+  output:
+    ansi:
+      enabled: Always
+  kafka:
+    bootstrap-servers: "localhost:9092"
+
+logging:
+  level:
+    com.mps: TRACE
+    root: INFO
+    org.hibernate: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
