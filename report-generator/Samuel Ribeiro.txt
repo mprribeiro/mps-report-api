@@ -1,0 +1,1 @@
+TransactionModel(id=2b366c76-7cea-4027-b593-e2d4fdc0a903, seller=Samuel Ribeiro, buyer=Pâmela Rodrigues, amount=1000.00, creationDate=2024-12-11T22:35:17.480921)
